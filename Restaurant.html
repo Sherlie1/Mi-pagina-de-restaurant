@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sabores de Chile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Spectral:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Sabores de Chile</h1>
+      <p>Comida casera, como cocinaba nuestras abuelas.</p>
+    </header>
+
+    <!-- Menú de Platos y boton -->
+    <div class="seccion">
+      <button id="platos-btn">Ver Platos Principales</button>
+
+      <!-- Contenedor general que se oculta/ y despues muestra -->
+      <div id="contenedor-platos" class="oculto">
+        <!-- hace que el título queda ARRIBA de las tarjetas -->
+        <h2 class="menu-titulo">🍽️ Platos Principales</h2>
+
+        <!-- El scroll horizontal SOLO envuelve los platos -->
+        <div id="menu-platos" class="menu-scroll">
+          <div class="plato">
+            <h3>Empanada de pino</h3>
+            <img src="imagenes/empanada.jpeg" alt="Empanada de pino" />
+            <p class="precio">$3.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Pastel de choclo</h3>
+            <img src="imagenes/pastel-choclo.webp" alt="Pastel de choclo" />
+            <p class="precio">$6.500</p>
+          </div>
+
+          <div class="plato">
+            <h3>Humita</h3>
+            <img src="imagenes/humita.jpg" alt="Humita" />
+            <p class="precio">$2.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Cazuela</h3>
+            <img src="imagenes/cazuela.jpg" alt="Cazuela" />
+            <p class="precio">$6.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Carbonada</h3>
+            <img src="imagenes/carbonada.jpg" alt="Carbonada" />
+            <p class="precio">$5.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Marisco</h3>
+            <img src="imagenes/marisco.jpg" alt="Marisco" />
+            <p class="precio">$10.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Poroto</h3>
+            <img src="imagenes/poloto.jpeg" alt="Poroto" />
+            <p class="precio">$6.500</p>
+          </div>
+
+          <div class="plato">
+            <h3>Carne a lo pobre</h3>
+            <img
+              src="imagenes/carne-a los pobres.jpeg"
+              alt="Carne a lo pobre"
+            />
+            <p class="precio">$9.000</p>
+          </div>
+
+          <div class="plato">
+            <h3>Sopaipilla</h3>
+            <img src="imagenes/sopapilla.jpg" alt="Sopaipilla" />
+            <p class="precio">$1.500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Seccion del boton de bebida-->
+    <div class="seccion">
+      <button id="bebidas-btn">Ver Bebidas</button>
+      <div id="contenedor-bebidas" class="oculto">
+        <h2 class="menu-titulo">🥤 Bebidas</h2>
+
+        <!-- 'menu-scroll' ahora rodea únicamente a las tarjetas de bebidas -->
+        <div id="menu-bebidas" class="menu-scroll">
+          <div class="bebida">
+            <h3>Agua de Jamaica</h3>
+            <img src="bebidas/agua de jamaica.jpg" alt="Agua de jamaica" />
+            <p class="precio">$2.500</p>
+          </div>
+
+          <div class="bebida">
+            <h3>Horchata</h3>
+            <img src="bebidas/horchata.jpg" alt="Horchata" />
+            <p class="precio">$2.500</p>
+          </div>
+
+          <div class="bebida">
+            <h3>Pisco Sour Clásico</h3>
+            <img src="bebidas/pisco sour clasico.jpg" alt="Pisco Sour" />
+            <p class="precio">$7.000</p>
+          </div>
+
+          <div class="bebida">
+            <h3>Margarita</h3>
+            <img src="bebidas/margarita.jpg" alt="Margarita" />
+            <p class="precio">$7.500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pedido">
+      <h2>¿Cómo quieres tu pedido?</h2>
+      <button>Comer en el local</button>
+      <button>Para llevar</button>
+      <a href="https://ubereats.com" target="_blank"
+        ><button>Uber Eats</button></a
+      >
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
