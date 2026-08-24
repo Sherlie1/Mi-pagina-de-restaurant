@@ -19,10 +19,22 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: transparent;
-    margin: 0;
-    padding: 20px 0;
-    line-height: 1.6;
+    
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: 0;
+}
+
+header,
+.seccion,
+.pedido {
+    position: relative;
+    z-index: 1;
+}
 }
 
 
@@ -45,7 +57,7 @@ h1 {
 
 .seccion {
     max-width: 1300px;
-    margin: 0 auto 110px;
+    margin: 0 auto 120px;
     padding: 0 20px;
 }
 
