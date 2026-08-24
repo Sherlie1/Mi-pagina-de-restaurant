@@ -1,141 +1,231 @@
 /* ====================== FUENTES ====================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Spectral:wght@400;600&display=swap');
 
+
 /* ====================== ESTILOS GENERALES ====================== */
-body {
-  .oculto {
+
+* {
+    box-sizing: border-box;
+}
+
+.oculto {
     display: none;
 }
 
-/* Estilos adicionales según lo que necesites */
-
-  font-family: 'Spectral', serif;        /* Fuente principal para todo el texto normal */
-  background-image: url(imagenes/jay-wennington-N_Y88TWmGwA-unsplash.jpg);             /* image de fondo de toda la página */
-  background-color: transparent;
-  margin: 0;                             /* Elimina márgenes por defecto del navegador */
-  padding: 20px 0;                       /* Espacio arriba y abajo de la página */
-  line-height: 1.6;                      /* Espaciado entre líneas de texto (más cómodo de leer) */
-  
+body {
+    font-family: 'Spectral', serif;
+    background-image: url("imagenes/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.6;
 }
 
+
+/* ====================== HEADER ====================== */
+
 header {
-  text-align: center;                    /* Centra el logo y descripción */
-  margin-bottom: 30px;                   /* Espacio debajo del header */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 h1 {
-  font-family: 'Old Standard TT', serif; /* Fuente rústica elegante para el título principal */
-  color: #d8205d;                        /* Color marrón oscuro */
-  font-size: 5.2rem;                     /* Tamaño grande del título */
-  margin: 0;                             /* Quita margen por defecto */
+    font-family: 'Old Standard TT', serif;
+    color: #d8205d;
+    font-size: 5.2rem;
+    margin: 0;
 }
 
+
 /* ====================== SECCIONES ====================== */
+
 .seccion {
-  max-width: 1300px;                     /* Ancho máximo para que no se vea muy ancho en pantallas grandes */
-  margin: 0 auto 50px auto;              /* Centrado horizontal + espacio abajo */
-  padding: 0 20px;                       /* Espacio a los lados en móviles */
+    max-width: 1300px;
+    margin: 0 auto 110px;
+    padding: 0 20px;
 }
 
 h2 {
-  font-family: 'Old Standard TT', serif; /* Fuente rústica para subtítulos */
-  text-align: center;                    /* Centra el título "Platos Principales" y "Bebidas" */
-  margin-bottom: 25px;                   /* Espacio debajo del subtítulo */
-  color: #ec3774;                        /* Color oscuro */
-  font-size: 2.4rem;                     /* Tamaño grande */
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ead9df;
+    font-size: 2.4rem;
 }
+
+
+/* ====================== GRID DE PLATOS ====================== */
+
+.seccion-platos {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: repeat(2, auto);
+
+    gap: 20px;
+}
+
+
+/* Primer plato grande */
+
+.seccion-platos .plato:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
 
 /* ====================== SCROLL HORIZONTAL ====================== */
 
 .menu-scroll {
-  display: flex;                         /* Coloca las tarjetas en fila horizontal */
-  align-items: center;
-  gap: 18px;                             /* Espacio entre cada plato o bebida */
-  padding: 15px 0;                       /* Espacio arriba y abajo del área de scroll */
-  overflow-x: auto;                      /* Activa el scroll horizontal */
-  overflow-y: hidden;                    /* Oculta scroll vertical */
-  flex-wrap: nowrap;                     /* Evita que las tarjetas bajen a otra fila */
-  scroll-behavior: smooth;               /* Hace que el scroll sea suave al deslizar */
-  /* Mejoras visuales del scroll */
-  scrollbar-width: thin;                    /* Para Firefox */
-  scrollbar-color: #8b5a2b #d4c3b5;         /* Color de la barra (Firefox) */
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8b5a2b #d4c3b5;
 }
 
-/* Estilo de la barra de scroll para Chrome, Edge y Safari */
+
+/* Scroll para Chrome, Edge y Safari */
+
 .menu-scroll::-webkit-scrollbar {
-  height: 8px;                              /* Grosor de la barra */
-  border-radius: 10px;
+    height: 8px;
 }
 
 .menu-scroll::-webkit-scrollbar-track {
-  background: #d4c3b5;                      /* Color del fondo de la barra */
-  border-radius: 10px;
+    background: #d4c3b5;
+    border-radius: 10px;
 }
 
 .menu-scroll::-webkit-scrollbar-thumb {
-  background: #8b5a2b;                      /* Color de la barra */
-  border-radius: 10px;
+    background: #8b5a2b;
+    border-radius: 10px;
 }
 
 
-/* ====================== TARJETAS (PLATOS Y BEBIDAS) ====================== */
+/* ====================== TARJETAS ====================== */
 
-.plato, .bebida {
-  display: flex;                         /* Permite organizar imagen, título y precio */
-  
-  flex-direction: column;                /* Organiza los elementos de arriba hacia abajo */
-  min-width: 230px;                      /* Ancho mínimo de cada tarjeta */
-  flex-shrink: 0;
-  border: 1px solid #b76060;             /* Borde claro */
-  border-radius: 12px;                   /* Bordes redondeados */
-  background-color: rgb(233, 220, 220);  /* Color de fondo de las tarjetas */
-  padding: 12px;                         /* Espacio interno de la tarjeta */
-  text-align: center;                    /* Centra el texto dentro de la tarjeta */
-  box-shadow: 0 4px 10px rgba(158, 106, 106, 0.1); /* Sombra suave debajo de la tarjeta */
-  flex-shrink: 0;                        /* Evita que las tarjetas se hagan más pequeñas */
-  transition: all 0.3s ease;             /* Suaviza los cambios al pasar el mouse */
-}
+.plato,
+.bebida {
+    display: flex;
+    flex-direction: column;
 
-.plato:hover, .bebida:hover {
-  transform: scale(1.04);                /* Hace que la tarjeta crezca un poco */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
-}
-/* Imágenes */
-.plato img, .bebida img {
-  width: 100%;                           /* Ocupa todo el ancho de la tarjeta */
-  height: 200px;                         /* Altura fija */
-  object-fit: cover;                     /* La imagen se ajusta sin deformarse */
-  border-radius: 10px;                   /* Bordes redondeados en la imagen */
-  margin-bottom: 12px;                   /* Espacio debajo de la imagen */
-}
-/* Títulos de platos y bebidas */
-.plato h3, .bebida h3 {
-  margin: 10px 0 6px 0;                  /* Espaciado del título */
-  font-size: 17px;                       /* Tamaño del texto */
-  color: #ddc1c1;                           /* Color gris oscuro */
-  font-family: 'Old Standard TT', serif; /* Fuente rústica para los nombres */
+    min-width: 230px;
+
+    border: 1px solid #b76060;
+    border-radius: 12px;
+
+    background-color: rgb(233, 220, 220);
+
+    padding: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(158, 106, 106, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Precios */
+
+/* Hover */
+
+.plato:hover,
+.bebida:hover {
+    transform: scale(1.04);
+
+    box-shadow: 0 10px 20px rgba(223, 194, 194, 0.15);
+}
+
+
+/* ====================== IMÁGENES ====================== */
+
+.plato img,
+.bebida img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ====================== TÍTULOS ====================== */
+
+.plato h3,
+.bebida h3 {
+    margin: 10px 0 6px;
+
+    font-size: 24px;
+
+    color: #3b091a;
+
+    font-family: 'Old Standard TT', serif;
+}
+
+
+/* ====================== PRECIOS ====================== */
+
 .precio {
-  font-weight: bold;                     /* Texto en negrita */
-  color: #3b091a;                        /* Color rojo oscuro */
-  font-size: 21px;                       /* Tamaño grande */
+    font-weight: bold;
+
+    color: #3b091a;
+
+    font-size: 21px;
 }
+
 
 /* ====================== SECCIÓN DE PEDIDO ====================== */
+
 .pedido {
-  padding: 200px;
-  text-align: center;                    /* Centra los botones */
-  margin: 60px 20px;                     /* Espacio grande alrededor */
+    padding: 50px 20px;
+
+    text-align: center;
+
+    margin: 60px 20px;
 }
 
-/* ====================== RESPONSIVE (MÓVILES) ====================== */
+
+/* ====================== RESPONSIVE ====================== */
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.6rem;                   /* Título más pequeño en móviles */
-  }
-  h2 {
-    font-size: 2rem;                     /* Subtítulos más pequeños en móviles */
-  }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+
+    /* El Grid pasa a 2 columnas */
+
+    .seccion-platos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* El primer plato deja de ocupar tanto espacio */
+
+    .seccion-platos .plato:first-child {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
 }
